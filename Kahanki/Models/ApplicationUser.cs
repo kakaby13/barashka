@@ -6,6 +6,10 @@ namespace Kahanki.Models
     {
         public Guid Id { get; set; }
 
+        public List<Couple> Couples { get; set; }
+
+
+
         public override bool EmailConfirmed { get; set; } = true;
 
     }

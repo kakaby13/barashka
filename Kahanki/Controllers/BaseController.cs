@@ -1,5 +1,4 @@
-﻿using System.Runtime.CompilerServices;
-using Kahanki.Data;
+﻿using Kahanki.Data;
 using Kahanki.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
