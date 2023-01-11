@@ -4,8 +4,16 @@
     {
         public Guid UserId { get; set; }
 
-        public ApplicationUser User { get; set; }
+        //public virtual ApplicationUser ApplicationUser { get; set; }
 
         public Guid Id { get; set; }
+
+        public Sex LookFor { get; set; }
+
+        public Sex Sex { get; set; }
+
+        //public SexualOrientation Orientation { get; set; }
+
+        //public Zodiac Zodiac { get; set; }
     }
 }

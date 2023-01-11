@@ -1,3 +1,4 @@
+using Kahanki.BL;
 using Microsoft.AspNetCore.SignalR;
 using Kahanki.Data;
 using Kahanki.Models;
@@ -20,7 +21,11 @@ builder.Services.AddDefaultIdentity<ApplicationUser>(options => options.SignIn.R
 builder.Services.AddIdentityServer()
     .AddApiAuthorization<ApplicationUser, ApplicationDbContext>();
 
-builder.Services.AddTransient<ApplicationDbContext>();
+builder.Services.AddTransient<ApplicationDbContext>()
+    .AddTransient<ICoupleService, CoupleService>()
+    .AddTransient<ICandidateService, CandidateService>()
+    .AddTransient<IChatService, ChatService>();
+
 
 builder.Services.AddAuthentication()
     .AddIdentityServerJwt();
