@@ -8,7 +8,8 @@ namespace Kahanki.Models
 
         public List<Couple> Couples { get; set; }
 
-        public virtual UserSetting UserSetting { get; set; }
+        public UserSetting UserSetting { get; set; } = new UserSetting();
+
         public List<Chat> Chats { get; set; }
 
         public override bool EmailConfirmed { get; set; } = true;

@@ -21,6 +21,8 @@ namespace Kahanki.BL
                 .ToList();
         }
 
+
+
         public void TryCreateCouple(Swap swap)
         {
             if (swap.SwapType is not (SwapType.Like or SwapType.SuperLike))

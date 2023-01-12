@@ -20,6 +20,18 @@ namespace Kahanki.Data
 
         public DbSet<Chat> Chats { get; set; } = null!;
 
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+
+            //modelBuilder.Entity<ApplicationUser>()
+            //    .HasOne(b => b.UserSetting)
+            //    .WithOne(i => i.ApplicationUser)
+            //    .HasForeignKey<UserSetting>(b => b.ApplicationUserId);
+            
+        }
+
+
         public ApplicationDbContext(DbContextOptions options, IOptions<OperationalStoreOptions> operationalStoreOptions)
             : base(options, operationalStoreOptions)
         {

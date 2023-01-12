@@ -4,7 +4,9 @@
     {
         public Guid UserId { get; set; }
 
-        //public virtual ApplicationUser ApplicationUser { get; set; }
+        //public Guid ApplicationUserId { get; set; }
+
+        //public ApplicationUser ApplicationUser { get; set; }
 
         public Guid Id { get; set; }
 

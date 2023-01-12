@@ -9,11 +9,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
 
-namespace Kahanki.Data.Migrations
+namespace Kahanki.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20230111193443_DefinitelyAddChat")]
-    partial class DefinitelyAddChat
+    [Migration("20230112192029_Initial")]
+    partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
