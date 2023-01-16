@@ -24,7 +24,8 @@ builder.Services.AddIdentityServer()
 builder.Services.AddTransient<ApplicationDbContext>()
     .AddTransient<ICoupleService, CoupleService>()
     .AddTransient<ICandidateService, CandidateService>()
-    .AddTransient<IChatService, ChatService>();
+    .AddTransient<IChatService, ChatService>()
+    .AddTransient<IUserService, UserService>();
 
 
 builder.Services.AddAuthentication()

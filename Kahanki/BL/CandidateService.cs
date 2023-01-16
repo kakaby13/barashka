@@ -17,13 +17,13 @@ namespace Kahanki.BL
 
         public ApplicationUser GetCandidate(Guid userId)
         {
-            var user = _dbContext.Users.Single(r => r.Id == userId);
+            var user = _dbContext.AppUsers.Single(r => r.Id == userId.ToString());
 
             var userSettings = _dbContext.UserSettings.Single(r => r.UserId == userId);
 
-            var likedUsersIds = _dbContext.Swaps.Where(r => r.UserLinkingId == user.Id).Select(r => r.UserLikedId).ToList();
+            var likedUsersIds = _dbContext.Swaps.Where(r => r.UserLinkingId.ToString() == user.Id).Select(r => r.UserLikedId).ToList();
             var candidates = _dbContext.Users
-                .Where(r => !likedUsersIds.Contains(r.Id))
+                .Where(r => !likedUsersIds.Contains(Guid.Parse(r.Id)))
                 .Where(c => c.UserSetting.LookFor == userSettings.Sex).ToList();
 
             return candidates.Skip(new Random().Next(0, candidates.Count)).First();

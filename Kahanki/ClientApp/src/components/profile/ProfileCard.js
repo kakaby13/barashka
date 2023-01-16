@@ -8,13 +8,10 @@ export class ProfileCard extends Component {
     super(props);
     this.state = { 
         currentCount: 0,
-    
     };
-    
     this.incrementCounter = this.incrementCounter.bind(this);
-    
-
   }
+
 
   incrementCounter() {
     this.setState({
@@ -26,7 +23,7 @@ export class ProfileCard extends Component {
     return (
         <>
         <div className="container flex">
-            <div className="card flex">
+            <div className="card  white-card flex">
                 <div className="photo flex column space-between">
                     <div className="img">
 

@@ -14,7 +14,7 @@ namespace Kahanki.BL
 
         public IEnumerable<Couple> GetCouplesByUserId(Guid userId)
         {
-            var user = _applicationDbContext.AppUsers.Single(c => c.Id == userId);
+            var user = _applicationDbContext.AppUsers.Single(c => c.Id == userId.ToString());
 
             return _applicationDbContext.Couples
                 .Where(c => c.Users.Contains(user))
@@ -30,13 +30,13 @@ namespace Kahanki.BL
                 return;
             }
 
-            var liked = _applicationDbContext.AppUsers.Single(c => c.Id == swap.UserLikedId);
-            var liking = _applicationDbContext.AppUsers.Single(c => c.Id == swap.UserLinkingId);
+            var liked = _applicationDbContext.AppUsers.Single(c => c.Id == swap.UserLikedId.ToString());
+            var liking = _applicationDbContext.AppUsers.Single(c => c.Id == swap.UserLinkingId.ToString());
 
             var result =
                 _applicationDbContext.Swaps.Any(c =>
-                    c.UserLikedId == liking.Id &&
-                    c.UserLinkingId == liked.Id &&
+                    c.UserLikedId.ToString() == liking.Id &&
+                    c.UserLinkingId.ToString() == liked.Id &&
                     (c.SwapType == SwapType.Like || c.SwapType == SwapType.SuperLike));
 
             if (result)

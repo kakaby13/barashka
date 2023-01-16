@@ -1,8 +1,10 @@
 import React from 'react'
 import { Component } from 'react'
 import { Route, Redirect } from 'react-router-dom'
+import { AuthPage } from '../AuthPage/AuthPage'
 import { ApplicationPaths, QueryParameterNames } from './ApiAuthorizationConstants'
 import authService from './AuthorizeService'
+import { LoginMenu } from './LoginMenu'
 
 export default class AuthorizeRoute extends Component {
     constructor(props) {
@@ -38,7 +40,8 @@ export default class AuthorizeRoute extends Component {
                     if (authenticated) {
                         return <Component {...props} />
                     } else {
-                        return <Redirect to={redirectUrl} />
+                        return <Redirect to={<AuthPage {...props}/>} />
+                        //return <Redirect to={redirectUrl} />
                     }
                 }} />
         }

@@ -5,15 +5,14 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Kahanki.Controllers
 {
-    public class BaseController<TEntity> : Controller where TEntity : class, IEntity
+    public class BaseController<TEntity> : ControllerBase where TEntity : class, IEntity
     {
         private readonly ApplicationDbContext _dbContext;
         private readonly DbSet<TEntity> _dbSet;
 
-
-        public BaseController()
+        public BaseController(ApplicationDbContext db)
         {
-            var dbContext = (ApplicationDbContext)HttpContext.RequestServices.GetService(typeof(ApplicationDbContext))!;
+            var dbContext = db;
 
             _dbContext = dbContext;
             _dbSet = _dbContext.Set<TEntity>();

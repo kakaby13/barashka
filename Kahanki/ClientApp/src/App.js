@@ -9,19 +9,24 @@ import ApiAuthorizationRoutes from './components/api-authorization/ApiAuthorizat
 import { ApplicationPaths } from './components/api-authorization/ApiAuthorizationConstants';
 
 import './custom.css'
-import { ProfileCard} from './components/ProfileCard';
-import { MatchList } from './components/MatchList';
-import { ChatList } from './components/ChatList';
+import { ProfileCard} from './components/profile/ProfileCard';
+import { MatchList } from './components/matchList/MatchList';
+import { ChatList } from './components/chatList/ChatList';
+import { UserSetting } from './components/userSettings/UserSettings';
+import { AuthPage } from './components/AuthPage/AuthPage';
 
 export default class App extends Component {
   static displayName = App.name;
 
+
+
   render () {
     return (
       <Layout>
-        <Route exact path='/' component={ ProfileCard } />
+        <Route exact path='/' component={ AuthPage } />
         <Route path='/matchs' component={ MatchList } />
         <Route path='/chats' component={ ChatList } />
+        <Route path='/settings' component={ UserSetting } />
         <AuthorizeRoute path='/fetch-data' component={FetchData} />
         <Route path={ApplicationPaths.ApiAuthorizationPrefix} component={ApiAuthorizationRoutes} />
       </Layout>

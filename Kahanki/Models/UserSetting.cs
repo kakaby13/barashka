@@ -2,13 +2,13 @@
 {
     public class UserSetting : IEntity
     {
+        public Guid Id { get; set; }
+
         public Guid UserId { get; set; }
 
         //public Guid ApplicationUserId { get; set; }
 
         //public ApplicationUser ApplicationUser { get; set; }
-
-        public Guid Id { get; set; }
 
         public Sex LookFor { get; set; }
 

@@ -2,10 +2,8 @@
 
 namespace Kahanki.Models
 {
-    public class ApplicationUser : IdentityUser, IEntity
+    public class ApplicationUser : IdentityUser
     {
-        public Guid Id { get; set; }
-
         public List<Couple> Couples { get; set; }
 
         public UserSetting UserSetting { get; set; } = new UserSetting();
