@@ -1,5 +1,22 @@
-.matchCard {
-    width: 100px;
-    height: 100px;
+.matchs {
+    
+}
+
+.matchs .card {
+    width: 200px;
+    height: 200px;
     background-color: brown;
+}
+
+.matchs .card:nth-child(2){
+    width: 250px;
+    height: 250px;
+}
+
+.matchs .card span {
+    position: relative;
+    top: 100%;
+    text-align: center;
+    font-size: 30px;
+    background-image: url();
 }

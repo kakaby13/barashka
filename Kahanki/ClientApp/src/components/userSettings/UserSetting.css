@@ -1,0 +1,11 @@
+form {
+}
+
+form > * {
+    margin-bottom: 10px;
+    width: 80%;
+}
+
+form .btn {
+    width: 80%;
+}

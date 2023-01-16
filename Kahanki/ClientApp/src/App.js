@@ -23,7 +23,7 @@ export default class App extends Component {
   render () {
     return (
       <Layout>
-        <Route exact path='/' component={ AuthPage } />
+        <Route exact path='/' component={ ProfileCard } />
         <Route path='/matchs' component={ MatchList } />
         <Route path='/chats' component={ ChatList } />
         <Route path='/settings' component={ UserSetting } />

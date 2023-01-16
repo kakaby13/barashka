@@ -1,12 +1,16 @@
+.chats {
+    
+}
+
 .chat {
     width: 80%;
-    height: 200px;
+    height: 100px;
     margin-bottom: 20px;
     background-color: transparent;
 }
 
 .chat .photo{
-    width: 300px;
+    width: 100px;
     height: 100%;
     border-radius: 10px;
     background-color: brown;
